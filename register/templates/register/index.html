@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit =no">
+    <title>Status Freaky</title>
+    <link rel="icon" type="image/ico" href="{% static 'register/favicon.ico' %}">
+    <meta charset="utf-8">
+ {% load static %}
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Css image gallery" />
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="{% static 'register/slider.css' %}" />
+	<script type="text/javascript" src="{% static 'register/jquery.js' %}"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+</head>
+
+<body>
+    <div style="position:absolute;left:0%;top:0cm;background-color: rgb(74, 126, 194);width:33.3m">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div style="position:absolute;width:36.75cm;top:0%;height:2cm;background-color:rgb(8, 62, 117);">  
+                <div style="position:absolute;width:20cm;left:10%;height:20cm;top:5cm;">
+                            <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+                    <div id="wowslider-container1">
+                            <div class="ws_images"><ul>
+                                <li><img src="{% static 'register/abstractiot.jpg' %}" alt="" title="" id="wows1_0"/></li>
+                                <li><img src="{% static 'register/biometric_iot.jpg' %}" alt="" title="" id="wows1_1"/></li>
+                                <li><img src="{% static 'register/internetofthings.jpg' %}" alt="" title="" id="wows1_2"/></li>
+                                <li><a href="http://wowslider.net"><img src="{% static 'register/rsz_bigstock165607613.jpg' %}" alt="jquery slideshow" title="165607613" id="wows1_3"/></a></li>
+                                <li><img src="{% static 'register/smart_city_iot_internet_of_things_network_global_world_thinkstock_670644696100749956large.jpg' %}" alt="" title="" id="wows1_4"/></li>
+                            </ul></div>
+                        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">css image gallery</a> by WOWSlider.com v8.8</div>
+                            <div class="ws_shadow"></div>
+                            </div>	
+                            <script type="text/javascript" src="{% static 'register/wowslider.js' %}"></script>
+                            <script type="text/javascript" src="{%static 'register/script.js' %}"></script>
+                    </div>
+                    
+                <div class="col-4"  >
+                        <div class="card" style="position:absolute;width:36.75cm;height:2cm;left:0cm;background-color:rgb(8, 62, 117);">
+                                <div style="position:absolute;left:6cm;top:0cm;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:50px;" >
+                                        <img src="{% static 'register/logo.jpg'%}" width="50px" height="50px"/>
+                                    </div>     
+                            <div style="position:absolute;left:8cm;top:0cm;font-family:Montserrat;font-size:50px;" >
+                                        <font color="white"><b>Status Freaky</b></font>
+                                    </div>   
+                            <form method="post" action="register/login/">
+                                    {% csrf_token %}
+                                    <div class="form-group" style="position:absolute;left:20.75cm;" >
+                                        <font color="white"><b>Email :</b></font><input name="login_email" type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group" style="position:absolute;left:27cm;">
+                                      <font color="white"><b>Password :</b></font><input name="login_password" type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group" style="position:absolute;top:25px;left:33.75cm;">
+                                        <input type="submit" value="Login" class="btn btn-primary">
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+        <div style="position:absolute;width:36.75cm;top:2cm;height:25cm;background-color:rgb(74, 126, 194);">
+            <div class="col-4" style="position:absolute;left:65%;top:2cm;">
+                <div class="card">
+                    <h4 class="card-header text-center">New User</h4>
+                    <div class="card-block">
+                        <form method="post" action="registeruser/">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="first_name" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "first_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input name="last_name" type="text" class="form-control">
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "last_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" type="email" class="form-control">
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "email" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input name="age" type="number" class="form-control">
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "age" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select name="gender" class="form-control">
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "gender" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" type="password" class="form-control">
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "password" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input name="confirm_password" type="password" class="form-control">
+                                {% if messages %} 
+                                {% for message in messages %} 
+                                {% if "confirm_password" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {% endif%} {% endfor%} {% endif %}
+                            </div>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Create Account" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        </div>
+    </div>
+    </div>
+    </script>
+</body>
+
+</html>

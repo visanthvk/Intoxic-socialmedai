@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Success</title>
+    <meta charset="utf-8">
+    {% load static %}
+	<style>
+		.my-small-btn {
+    		width:200px;
+    		padding:5px;
+		}
+	</style>
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<div class="alert alert-success" role="alert'">
+					<h4 class="alert-heading">Success</h4>
+                        <p>Welcome, <strong>{{user.first_name}} {{user.last_name}}</strong></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<a href="/checkavail/{{user.email}}" class="btn btn-primary btn-lg my-small-btn">Check Availability</a>
+				</div><br/>
+				<div class="col-md-4 text-center">
+					<a href="/book/{{user.email}}" class="btn btn-primary btn-lg my-small-btn">Book Ticket</a>
+				</div><br/>
+				<div class="col-md-4 text-center">
+					<a href="/cancel/{{user.email}}" class="btn btn-primary btn-lg my-small-btn">Cancel Ticket</a>
+				</div><br/>
+				<div class="col-md-4 text-center">
+					<a href="/userprofile/{{user.email}}" class="btn btn-primary btn-lg my-small-btn">Account Details</a>
+				</div><br/>
+				<div class="col-md-4 text-center">
+					<a href="/" class="btn btn-primary btn-lg my-small-btn">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
